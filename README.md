@@ -1,6 +1,6 @@
-# BuildRadiator Event Spy (Maven extension)
+# BuildRadiator Maven extension (Event Spy)
 
-Event spies are a Maven extension - not a plugin as such.
+Event spies are Maven extensions - not a Maven plugin as such.
 
 This one goes hand in hand with a [Build Radiator](//github.com//paul-hammant/buildradiator) site.
 
