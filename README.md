@@ -4,28 +4,24 @@ Event spies are Maven extensions - not a Maven plugin as such.
 
 This one goes hand in hand with a [Build Radiator](//github.com//paul-hammant/buildradiator) site.
 
-
-
 A build is a number of conceptual steps. Steps starting, passing and failing are events that this
 extension can pass to the build radiator (build cancellation is is outside the control of this tech).
 
-## Setting in the extension in your pom.xml
+## Setting in the extension in for your build
+
+In order to do the step updates on buildradiator.org ...
+
+Go and get the JAR from [Maven Central](https://repo.maven.apache.org/maven2/com/paulhammant/buildradiatorextension/)
+
+Check that into (say) `lib/`, then configure your build script to do:
 
 ```
-<build>
-    ...
-    <extensions>
-      <extension>
-        <groupId>com.paulhammant</groupId>
-        <artifactId>buildradiatorextension</artifactId>
-        <version>1.0</version>
-      </extension>
-    </extensions>
-    ... 
-</build>
+mvn <phase name> -Dmaven.ext.class.path=lib/buildradiatorextension-1.1.jar
 ```
 
-The above is in preference to placing the Jar in the `<maven-install-root>/lib/ext/` folder - on your Jenkins (etc) install of Maven. 
+That's where you're using a service like "Circle CI", and you're happy to check in a 10K jar.
+
+If you're using an on-premises Jenkins, you may prefer to place the Jar in the `<maven-install-root>/lib/ext/` folder. 
 
 ## Configuring Steps 
 
