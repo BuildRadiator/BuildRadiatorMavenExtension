@@ -21,7 +21,7 @@
   <artifactId>buildradiatorextension</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Buildradiator.org Extension</name>
+  <name>BuildRadiator.org Extension</name>
 
   <properties>
     <mavenVersion>3.1.1</mavenVersion>
