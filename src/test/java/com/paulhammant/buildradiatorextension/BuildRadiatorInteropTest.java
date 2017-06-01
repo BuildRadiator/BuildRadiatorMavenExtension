@@ -107,10 +107,10 @@ public class BuildRadiatorInteropTest {
         seriesOfOperations(bri, props);
 
         assertThat(bri.baos.toString(), equalTo("BuildRadiatorEventSpy: 'artifactEnvVar', 'buildIdEnvVar', 'radiatorCodeEnvVar' and 'radiatorSecretEnvVar' all have to be set as environmental variables before Maven is invoked, if you want your radiator to be updated. Additionally, 'artifactEnvVar' needs to match the root artifact being built. Note: This technology is for C.I. daemons only, not developer workstations!\n" +
-                "  artifactEnvVar: thisartifact\n" +
-                "  buildIdEnvVar: null\n" +
-                "  radiatorCodeEnvVar: rc123\n" +
-                "  radiatorSecretEnvVar: REDACTED (len:4)\n"));
+                "  buildingThisArtifact (env var): thisartifact\n" +
+                "  buildId (env var): null\n" +
+                "  radiatorCode (env var): rc123\n" +
+                "  radiatorSecret (env var): REDACTED (len:4)\n"));
         assertThat(bri.posts.toString(), equalTo(""));
     }
 
@@ -125,10 +125,10 @@ public class BuildRadiatorInteropTest {
         seriesOfOperations(bri, props);
 
         assertThat(bri.baos.toString(), equalTo("BuildRadiatorEventSpy: 'artifactEnvVar', 'buildIdEnvVar', 'radiatorCodeEnvVar' and 'radiatorSecretEnvVar' all have to be set as environmental variables before Maven is invoked, if you want your radiator to be updated. Additionally, 'artifactEnvVar' needs to match the root artifact being built. Note: This technology is for C.I. daemons only, not developer workstations!\n" +
-                "  artifactEnvVar: thisartifact\n" +
-                "  buildIdEnvVar: 1\n" +
-                "  radiatorCodeEnvVar: null\n" +
-                "  radiatorSecretEnvVar: REDACTED (len:4)\n"));
+                "  buildingThisArtifact (env var): thisartifact\n" +
+                "  buildId (env var): 1\n" +
+                "  radiatorCode (env var): null\n" +
+                "  radiatorSecret (env var): REDACTED (len:4)\n"));
         assertThat(bri.posts.toString(), equalTo(""));
     }
 
@@ -143,10 +143,10 @@ public class BuildRadiatorInteropTest {
         seriesOfOperations(bri, props);
 
         assertThat(bri.baos.toString(), equalTo("BuildRadiatorEventSpy: 'artifactEnvVar', 'buildIdEnvVar', 'radiatorCodeEnvVar' and 'radiatorSecretEnvVar' all have to be set as environmental variables before Maven is invoked, if you want your radiator to be updated. Additionally, 'artifactEnvVar' needs to match the root artifact being built. Note: This technology is for C.I. daemons only, not developer workstations!\n" +
-                "  artifactEnvVar: thisartifact\n" +
-                "  buildIdEnvVar: 1\n" +
-                "  radiatorCodeEnvVar: rc123\n" +
-                "  radiatorSecretEnvVar: null\n"));
+                "  buildingThisArtifact (env var): thisartifact\n" +
+                "  buildId (env var): 1\n" +
+                "  radiatorCode (env var): rc123\n" +
+                "  radiatorSecret (env var): null\n"));
         assertThat(bri.posts.toString(), equalTo(""));
     }
 

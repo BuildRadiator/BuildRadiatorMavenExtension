@@ -127,13 +127,13 @@ public class BuildRadiatorInterop {
                         "have to be set as environmental variables before Maven is invoked, if you want " +
                         "your radiator to be updated. Additionally, 'artifactEnvVar' needs to match the root " +
                         "artifact being built. Note: This technology is for C.I. daemons only, not developer workstations!");
-                systemErr().println("  artifactEnvVar: " + artifactEnvVar);
-                systemErr().println("  buildIdEnvVar: " + buildIdEnvVar);
-                systemErr().println("  radiatorCodeEnvVar: " + radiatorCodeEnvVar);
+                systemErr().println("  buildingThisArtifact (env var): " + artifactEnvVar);
+                systemErr().println("  buildId (env var): " + buildIdEnvVar);
+                systemErr().println("  radiatorCode (env var): " + radiatorCodeEnvVar);
                 if (radiatorSecretEnvVar == null) {
-                    systemErr().println("  radiatorSecretEnvVar: null");
+                    systemErr().println("  radiatorSecret (env var): null");
                 } else {
-                    systemErr().println("  radiatorSecretEnvVar: REDACTED (len:" + radiatorSecretEnvVar.length() + ")");
+                    systemErr().println("  radiatorSecret (env var): REDACTED (len:" + radiatorSecretEnvVar.length() + ")");
                 }
             }
             env_var_warning = true;
