@@ -7,21 +7,18 @@
  */
 package com.paulhammant.buildradiatorextension;
 
-import org.apache.maven.AbstractMavenLifecycleParticipant;
 import org.apache.maven.eventspy.AbstractEventSpy;
 import org.apache.maven.execution.BuildFailure;
 import org.apache.maven.execution.BuildSuccess;
 import org.apache.maven.execution.DefaultMavenExecutionResult;
 import org.apache.maven.execution.ExecutionEvent;
 import org.apache.maven.project.MavenProject;
-import org.codehaus.plexus.component.annotations.Component;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
 
 @Named
 @Singleton
-@Component( role = AbstractEventSpy.class)
 public class BuildRadiatorEventSpy extends AbstractEventSpy {
 
     private boolean projectPropertiesDone = false;
