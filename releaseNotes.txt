@@ -1,0 +1,4 @@
+These may be needed for the gpg plugin
+
+$ GPG_TTY=$(tty)
+$ export GPG_TTY
