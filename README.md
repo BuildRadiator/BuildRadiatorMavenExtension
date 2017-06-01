@@ -4,13 +4,28 @@ Event spies are Maven extensions - not a Maven plugin as such.
 
 This one goes hand in hand with a [Build Radiator](//github.com//paul-hammant/buildradiator) site.
 
-Place the Jar in the `<maven-install-root>/lib/ext/` folder - on your Jenkins (etc) install of Maven. 
-Not on your dev workstation, because that has no business updating a build radiator.
+
 
 A build is a number of conceptual steps. Steps starting, passing and failing are events that this
-extenion can pass to the build radiator (build cancellation is is outside the control of this tech).
+extension can pass to the build radiator (build cancellation is is outside the control of this tech).
 
-TODO - link to Maven Central
+## Setting in the extension in your pom.xml
+
+```
+<build>
+    ...
+    <extensions>
+      <extension>
+        <groupId>com.paulhammant</groupId>
+        <artifactId>buildradiatorextension</artifactId>
+        <version>1.0</version>
+      </extension>
+    </extensions>
+    ... 
+</build>
+```
+
+The above is in preference to placing the Jar in the `<maven-install-root>/lib/ext/` folder - on your Jenkins (etc) install of Maven. 
 
 ## Configuring Steps 
 
@@ -58,6 +73,8 @@ export buildIdEnvVar=<the build number from Jenkin or the commit hash etc>
 export radiatorCodeEnvVar=<radiator code from when you created the radiator>
 export secret=<radiator secret from when you created the radiator>
 ```
+
+Don't do these on your dev workstation, because updating the build radiator is the business of your CI daemon.
 
 ## Researching where to make step changes
 
