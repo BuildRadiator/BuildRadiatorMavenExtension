@@ -85,7 +85,4 @@
     </plugins>
   </build>
 
-  <scm>
-    <tag>buildradiatorextension-1.0</tag>
-  </scm>
 </project>
