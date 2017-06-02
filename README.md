@@ -7,7 +7,7 @@ This one goes hand in hand with a [Build Radiator](//github.com//paul-hammant/bu
 A build is a number of conceptual steps. Steps starting, passing and failing are events that this
 extension can pass to the build radiator (build cancellation is is outside the control of this tech).
 
-## Setting in the extension in for your build
+## Setting up the extension in your build
 
 In order to do the step updates on buildradiator.org ...
 
@@ -19,9 +19,10 @@ Check that into (say) `lib/`, then configure your build script to do:
 mvn <phase name> -Dmaven.ext.class.path=lib/buildradiatorextension-1.1.jar
 ```
 
-That's where you're using a service like "Circle CI", and you're happy to check in a 10K jar.
+When you are using a service like "Circle CI", and you're happy to check that a 10K jar, you've avoided a bootstrap problem as
+those CI-as-a-service things won't let you acquire a Maven extension before launching Maven.
 
-If you're using an on-premises Jenkins, you may prefer to place the Jar in the `<maven-install-root>/lib/ext/` folder. 
+If you're using an on-premises Jenkins, you may prefer to simply place the same Jar in the `<maven-install-root>/lib/ext/` folder. 
 
 ## Configuring Steps 
 
