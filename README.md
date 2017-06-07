@@ -19,9 +19,10 @@ Check that into (say) `lib/`, then configure your build script to do:
 mvn <phase name> -Dmaven.ext.class.path=lib/buildradiatorextension-1.1.jar
 ```
 
-That's where you're using a service like "Circle CI", and you're happy to check in a 10K jar.
+When you are using a service like "Circle CI", and you're happy to check that a 10K jar, you've avoided a bootstrap problem as
+those CI-as-a-service things won't let you acquire a Maven extension before launching Maven.
 
-If you're using an on-premises Jenkins, you may prefer to place the Jar in the `<maven-install-root>/lib/ext/` folder. 
+If you're using an on-premises Jenkins, you may prefer to simply place the same Jar in the `<maven-install-root>/lib/ext/` folder. 
 
 ## Configuring Steps 
 
