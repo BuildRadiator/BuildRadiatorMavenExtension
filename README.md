@@ -7,7 +7,7 @@ This one goes hand in hand with a [Build Radiator](//github.com//paul-hammant/bu
 A build is a number of conceptual steps. Steps starting, passing and failing are events that this
 extension can pass to the build radiator (build cancellation is is outside the control of this tech).
 
-## Setting in the extension in for your build
+## Setting up the extension for your build
 
 In order to do the step updates on buildradiator.org ...
 
@@ -65,9 +65,9 @@ Be sure to get the `http` vs `https` right.
 You need to set these for each CI initiated build, before Maven is launched:
 
 ```
-export buildIdEnvVar=<the build number from Jenkin or the commit hash etc>
-export radiatorCodeEnvVar=<radiator code from when you created the radiator>
-export secret=<radiator secret from when you created the radiator>
+export buildId=<the build number from Jenkin or the commit hash etc>
+export radiatorCode=<radiator code from when you created the radiator>
+export radiatorSecret=<radiator secret from when you created the radiator>
 ```
 
 Don't do these on your dev workstation, because updating the build radiator is the business of your CI daemon.
