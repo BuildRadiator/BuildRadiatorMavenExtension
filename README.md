@@ -31,14 +31,14 @@ In your project's POM, you need to identify artifactId/phases/executions where a
 ```
 <properties>
   <buildradiator.0>Compile=*</buildradiator.0>
-  <buildradiator.1>Unit_Tests=buildradiator/process-test-resources/default-testResources</buildradiator.1>
-  <buildradiator.2>Integration_Tests=buildradiator/test/integration-tests</buildradiator.2>
-  <buildradiator.3>Functional_Tests=buildradiator/test/functional-tests</buildradiator.3>
+  <buildradiator.1>Unit Tests=buildradiator/process-test-resources/default-testResources</buildradiator.1>
+  <buildradiator.2>Service Tests=buildradiator/test/service-tests</buildradiator.2>
+  <buildradiator.3>Selenium Tests=buildradiator/test/selenium-tests</buildradiator.3>
   <buildradiator.4>Package=*</buildradiator.4>
 </properties>
 ```
 
-One step can be multiple artifactId/phases/executions, of course, especially for a multi-module project.  
+One step can span multiple artifactId/phases/executions, of course, especially for a multi-module project.  
 The above was taken from the `BuildRadiator` project. 
 [See pom](//github.com//paul-hammant/buildradiator/blob/master/pom.xml)
 
@@ -69,6 +69,7 @@ You need to set these for each CI initiated build, before Maven is launched:
 export buildId=<the build number from Jenkin or the commit hash etc>
 export radiatorCode=<radiator code from when you created the radiator>
 export radiatorSecret=<radiator secret from when you created the radiator>
+export buildingThisArtifact=<the name of the root level artifact>
 ```
 
 Don't do these on your dev workstation, because updating the build radiator is the business of your CI daemon.
