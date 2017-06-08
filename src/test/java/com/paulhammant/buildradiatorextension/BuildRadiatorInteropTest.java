@@ -36,9 +36,9 @@ public class BuildRadiatorInteropTest {
         assertThat(bri.posts.toString().replace("https://buildradiator.org/r/rc123/","")
                 .replace("&"," "), equalTo(
                 "startStep build=1 step=one secret=scrt\n" +
-                "stepPassedAndStartStep build=1 step=two secret=scrt pStep=one\n" +
-                "stepPassedAndStartStep build=1 step=three secret=scrt pStep=two\n" +
-                "stepPassedAndStartStep build=1 step=four secret=scrt pStep=three\n" +
+                "startStep build=1 step=two secret=scrt\n" +
+                "startStep build=1 step=three secret=scrt\n" +
+                "startStep build=1 step=four secret=scrt\n" +
                 "stepFailed build=1 step=four secret=scrt\n"));
     }
 
@@ -71,8 +71,8 @@ public class BuildRadiatorInteropTest {
         assertThat(bri.posts.toString().replace("https://buildradiator.org/r/rc123/","")
                 .replace("&"," "), equalTo(
                 "startStep build=1 step=one secret=scrt\n" +
-                "stepPassedAndStartStep build=1 step=two secret=scrt pStep=one\n" +
-                "stepPassedAndStartStep build=1 step=three secret=scrt pStep=two\n" +
+                "startStep build=1 step=two secret=scrt\n" +
+                "startStep build=1 step=three secret=scrt\n" +
                 "stepFailed build=1 step=three secret=scrt\n"));
     }
 

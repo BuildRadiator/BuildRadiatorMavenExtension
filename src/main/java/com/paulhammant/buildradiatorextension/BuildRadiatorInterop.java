@@ -71,11 +71,7 @@ public class BuildRadiatorInterop {
                 stepFailedNotification(lastStep);
                 hasFailed = true;
             } else {
-                if (hasStarted) {
-                    stepPassedAndStartStepNotification(lastStep, nextStep);
-                } else {
-                    startStepNotification(nextStep);
-                }
+                startStepNotification(nextStep);
                 lastStep = nextStep;
                 hasStarted = true;
                 currStep++;
