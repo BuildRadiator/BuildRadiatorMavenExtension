@@ -119,9 +119,9 @@ public class BuildRadiatorInterop {
     private void stepNotification(String pStep, String step, String stateChg) {
         if (varsAreMissing() || !this.artifactEnvVar.equals(this.rootArtifactId)) {
             if (!env_var_warning) {
-                systemErr().println("BuildRadiatorEventSpy: 'artifactEnvVar', 'buildIdEnvVar', 'radiatorCodeEnvVar' and 'radiatorSecretEnvVar' all " +
+                systemErr().println("BuildRadiatorEventSpy: 'buildingThisArtifact', 'buildId', 'radiatorCode' and 'radiatorSecret' all " +
                         "have to be set as environmental variables before Maven is invoked, if you want " +
-                        "your radiator to be updated. Additionally, 'artifactEnvVar' needs to match the root " +
+                        "your radiator to be updated. Additionally, 'buildingThisArtifact' needs to match the root " +
                         "artifact being built. Note: This technology is for C.I. daemons only, not developer workstations!");
                 systemErr().println("  buildingThisArtifact (env var): " + artifactEnvVar);
                 systemErr().println("  buildId (env var): " + buildIdEnvVar);
